@@ -1,3 +1,4 @@
 {
-  "extends": ["github>macchiitaka/renovate-config", ":assignee(macchiitaka)"]
+  "extends": ["github>macchiitaka/renovate-config", ":assignee(macchiitaka)"],
+  "fileMatch": ["requirements.txt", "requirements.lock"]
 }
