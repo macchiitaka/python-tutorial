@@ -1,4 +1,3 @@
-import json
 import math
 import sys
 import time
@@ -126,7 +125,19 @@ nums: List[int] = [x for x in range(10)]
 
 # リスト内包表記のネスト
 nums2: List[Tuple[int, int]] = [(x, y) for x in range(3) for y in range(3)]
-print(nums2)  # [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+print(nums2)
+# [
+#     (0, 0),
+#     (0, 1),
+#     (0, 2),
+#     (1, 0),
+#     (1, 1),
+#     (1, 2),
+#     (2, 0),
+#     (2, 1),
+#     (2, 2),
+# ]
+
 
 # 配列のフィルター
 nums3_0: List[int] = [x for x in range(3) if x % 2 == 0]
@@ -248,6 +259,7 @@ def f2() -> None:
     def g():
         # f2 の変数 x とは別スコープ
         x: int = 2
+        print(x)
 
     g()
     print(x)
@@ -312,7 +324,7 @@ print(list(filter(lambda x: x > 2, numbers)))  # [3, 4]
 print(list(map(lambda x: x**2, sorted(numbers))))  # [1, 4, 9, 16]
 
 # sorted と itemgetter の組み合わせで辞書の値で並び替えができる
-counts: List[Dict[str, Union[int, str]],] = [
+counts: List[Dict[str, Union[int, str]]] = [
     {"word": "python", "count": 3},
     {"word": "practice", "count": 1},
     {"word": "book", "count": 2},
