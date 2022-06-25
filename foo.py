@@ -32,6 +32,7 @@ for num in odd_numbers:
 else:
     print("奇数を含めてください")
 
+
 while True:
     break
 # for else と同じく最後に実行されるが break で抜けた場合は通らない
@@ -40,6 +41,9 @@ else:
 
 
 def get_book(index: int) -> str:
+    """
+    get book
+    """
     res: str = ""
     items: List[str] = ["note", "notebook", "sketchbook"]
     try:
@@ -348,10 +352,10 @@ print(any([1, 2, 3]))
 print(any([0]))
 
 
-def gen_function(n: int):
-    while n >= 0:
-        yield n
-        n -= 1
+def gen_function(number: int):
+    while number >= 0:
+        yield number
+        number -= 1
 
 
 gen_f = gen_function(2)
@@ -376,13 +380,13 @@ arr1: List[int] = list(gen1)
 
 
 # デコレーター実装サンプル
-def elapsed_time(f):
-    @wraps(f)
+def elapsed_time(function):
+    @wraps(function)
     def wrapper(*args, **kwargs):
         start = time.time()
-        v = f(*args, **kwargs)
-        print(f"{f.__name__}: {time.time() - start}")
-        return v
+        value = function(*args, **kwargs)
+        print(f"{function.__name__}: {time.time() - start}")
+        return value
 
     return wrapper
 
@@ -394,9 +398,9 @@ class DecoratorSample:
         self.name = name
 
     @elapsed_time
-    def getName(self) -> str:
+    def get_name(self) -> str:
         return self.name
 
 
 decoratorSample = DecoratorSample("John")
-decoratorSample.getName()
+decoratorSample.get_name()
