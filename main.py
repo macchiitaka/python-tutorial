@@ -1,4 +1,4 @@
-from typing import List, Tuple, Dict, Union
+from typing import List, Tuple, Dict, Union, Final
 from utils import inRange
 from random import randint
 import json
@@ -18,7 +18,7 @@ print(f"{foo} {bar}")  # foo bar
 x, y, z = 0, 0, 0
 
 # 定数（慣例）
-MAX_CONNECTION: int = 10
+MAX_CONNECTION: Final[int] = 10
 
 # 数値区切り
 unix_time: int = 1_000_000
@@ -121,6 +121,7 @@ print(1 not in numbers)
 # 空配列は Falsy
 print(bool([]))
 
+
 # 辞書（オブジェクト）
 dict: Dict[str, Union[str, int]] = {"color": "red"}
 print(dict)
@@ -217,7 +218,7 @@ def sample(foo: str, *args: int) -> None:  # 慣例的に args を利用する
 sample("foo", 1, 2, 3)
 
 
-def foo(_: str, **kwargs: int) -> None:  # 慣例的に kwargs を利用する
+def foo1(_: str, **kwargs: int) -> None:  # 慣例的に kwargs を利用する
     """
     可変長キーワード引数
     """
@@ -225,7 +226,7 @@ def foo(_: str, **kwargs: int) -> None:  # 慣例的に kwargs を利用する
     print(kwargs)  # (1, 2, 3)
 
 
-foo(_="_", foo=1, bar=2, baz=3)
+foo1(_="_", foo=1, bar=2, baz=3)
 
 print(inRange(1, 2, 3))  # 2
 
@@ -331,11 +332,11 @@ else:
     print(result)
 
 # JSON 書き込み
-numbers: List[int] = list(range(1, 11))
+numbers1: List[int] = list(range(1, 11))
 with open("numbers.json", mode="w", encoding="utf-8") as f:
     json.dump(numbers, f)
 
 # JSON 読み込み
 with open("numbers.json", encoding="utf-8") as f:
-    numbers = json.load(f)
-print(numbers)
+    numbers2 = json.load(f)
+print(numbers2)
