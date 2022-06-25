@@ -1,13 +1,15 @@
-# import json
+import json
 import math
-from typing import List, Dict, Union, Tuple, Set, FrozenSet, Any, Generator, Callable
 import sys
-from package_bar import foo as _foo, print_foo
-from operator import itemgetter
-from functools import wraps
 import time
+from functools import wraps
+from operator import itemgetter
+from typing import Any, Callable, Dict, FrozenSet, Generator, List, Set, Tuple, Union
 
-obj: Dict[str, str] = {"foo": "a", "bar": "b"}
+from package_bar import foo as _foo
+from package_bar import print_foo
+
+obj: Dict[str, Union[str, int]] = {"foo": "a", "bar": "b", "baz": 1}
 
 # オブジェクトの属性を表示
 print(dir(obj))

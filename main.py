@@ -1,7 +1,8 @@
-from typing import List, Tuple, Dict, Union, Final
-from utils import inRange
-from random import randint
 import json
+from random import randint
+from typing import Dict, Final, List, Tuple, Union
+
+from utils import inRange
 
 # アスタリスクですべてインポート
 # from utils import *

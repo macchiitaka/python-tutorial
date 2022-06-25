@@ -1,5 +1,6 @@
-from utils import inRange
 import unittest
+
+from utils import inRange
 
 
 class InRangeTestCase(unittest.TestCase):
