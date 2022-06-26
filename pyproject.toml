@@ -1,2 +1,22 @@
+[tool.poetry]
+name = "python-tutorial"
+version = "0.1.0"
+description = ""
+authors = ["Takashi Machinaga <zxcvbnmtacashi@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.10.4"
+black = "^22.3.0"
+mypy = "^0.961"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+pylint = "^2.14.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.isort]
 profile = "black"
