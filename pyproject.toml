@@ -10,7 +10,7 @@ black = "^22.3.0"
 mypy = "^0.961"
 isort = "^5.10.1"
 flake8 = "^4.0.1"
-pylint = "^2.14.3"
+pylint = "^2.14.4"
 
 [tool.poetry.dev-dependencies]
 
